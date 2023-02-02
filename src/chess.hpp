@@ -1558,7 +1558,7 @@ inline void Board::unmakeNullMove()
     sideToMove = ~sideToMove;
 }
 
-inline void Board::removePiece(Piece piece, Square sq)
+/*inline void Board::removePiece(Piece piece, Square sq)
 {
     piecesBB[piece] &= ~(1ULL << sq);
     board[sq] = None;
@@ -1576,7 +1576,7 @@ inline void Board::movePiece(Piece piece, Square fromSq, Square toSq)
     piecesBB[piece] |= (1ULL << toSq);
     board[fromSq] = None;
     board[toSq] = piece;
-}
+}*/
 
 inline U64 Board::attacksByPiece(PieceType pt, Square sq, Color c) const
 {
