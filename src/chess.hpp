@@ -16,6 +16,8 @@
 
 using namespace Chess_Lookup::Fancy;
 
+using Eval_Type = int;
+
 namespace Chess
 {
 
@@ -1047,22 +1049,22 @@ class Board
     void removeCastlingRightsRook(Square sq);
 
     // Fork additions:
-    enum Eval_Type {
+    enum Eval_Mode {
         Incremental_PST,
         Full_PST,
         Random,
         Pseudo_random
     };
 
-    constexpr static Eval_Type EVAL_TYPE = Incremental_PST;
+    constexpr static Eval_Mode EVAL_MODE = Pseudo_random;
 
     int midgame_PST = 0, endgame_PST = 0, game_phase = 0;
 
 public:
-    template<Eval_Type type>
-    int eval();
+    template<Eval_Mode type>
+    Eval_Type eval();
 
-    int eval();
+    Eval_Type eval();
 };
 
 inline Board::Board(std::string fen)
