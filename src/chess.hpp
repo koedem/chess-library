@@ -16,7 +16,7 @@
 
 using namespace Chess_Lookup::Fancy;
 
-using Eval_Type = int;
+using Eval_Type = std::int16_t;
 
 namespace Chess
 {
