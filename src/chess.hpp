@@ -1058,7 +1058,7 @@ class Board
         Pseudo_random
     };
 
-    constexpr static Eval_Mode EVAL_MODE = Pseudo_random;
+    constexpr static Eval_Mode EVAL_MODE = Incremental_PST;
 
     int midgame_PST = 0, endgame_PST = 0, game_phase = 0;
 
