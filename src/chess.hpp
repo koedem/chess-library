@@ -1058,7 +1058,7 @@ class Board
         Pseudo_random
     };
 
-    constexpr static Eval_Mode EVAL_MODE = Incremental_PST;
+    constexpr static Eval_Mode EVAL_MODE = Pseudo_random;
 
     int midgame_PST = 0, endgame_PST = 0, game_phase = 0;
 
@@ -1067,6 +1067,10 @@ public:
     Eval_Type eval();
 
     Eval_Type eval();
+
+    bool in_check() const {
+        return isSquareAttacked(~sideToMove, KingSQ(sideToMove));
+    }
 };
 
 inline Board::Board(std::string fen)
