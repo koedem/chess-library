@@ -1123,6 +1123,9 @@ inline void Board::applyFen(const std::string &fen)
     {
         piecesBB[p] = 0ULL;
     }
+    midgame_PST = 0;
+    endgame_PST = 0;
+    game_phase = 0;
 
     const std::vector<std::string> params = splitInput(fen);
 
